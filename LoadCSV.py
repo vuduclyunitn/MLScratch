@@ -1,4 +1,10 @@
 from csv import reader
+
+# Code for loading csv
+''''
+input: csv file path
+output: list of list instance.
+'''
 def load_csv(filename):
     dataset = list()
     csvfile = open(filename, "r")
@@ -12,6 +18,7 @@ def load_csv(filename):
 
 '''
 Convert items of dataset to float
+Handle non number value in cell
 '''
 def string_column_to_float(dataset, column):
     row = []
@@ -23,23 +30,6 @@ def string_column_to_float(dataset, column):
         row.append(float(i.strip()))
     return row
 
-#filename = "pima-indians-diabetes.csv"
-#dataset = load_csv(filename)
-#print((dataset)[0])
-#print(string_column_to_float(dataset, 0))
-#
-#print("Load dataset {0} with {1} rows and {2} columns".format(filename, len(dataset), len(dataset[0])))
-#convertedData = []
-#for i, r in enumerate(dataset):
-#    convertedData.append(string_column_to_float(dataset, i))
-#
-#print("Converted: {}".format(convertedData[0]))
-#print(len(dataset) == len(dataset[0]))
-#
-#print("Load dataset {0} with {1} rows and {2} columns".format(filename, len(convertedData), len(convertedData[0])))
-#
-
-# Iris : converting predicted values in strings to numeric
 irisfile = "iris.csv"
 def load_iris(filename):
     with open(filename, "r") as f:
